@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {HttpService} from "./modules/services/http.service";
 import {Http} from "@angular/http";
 
 @Component({
@@ -12,19 +11,12 @@ export class AppComponent {
 
   public http: Http;
   stations: any;
-
-  ngOnInit(){
-
-  }
-
-
+  important: any[];
 
   constructor(http: Http){
     this.http = http;
 
-    // this.http.get('stations.json')
-    //   .map(res => res.json())
-    //   .subscribe(stations => this.stations = stations);
+    this.getEstimatedDepartureTime('12TH');
 
   }
 
@@ -37,13 +29,17 @@ export class AppComponent {
     //
     // console.log(this.stations);
 
+    console.log(station);
 
-    return this.http.get(edtUrl).subscribe(
+    // return this.http.get(edtUrl).subscribe(
+    return this.http.get('assets/stations.json').subscribe(
       (data) => {
         this.stations = data.json();
         console.log(this.stations);
-      }
+        this.important = this.stations.root.station[0].etd;
+        console.log(this.important);
 
+      }
     );
   }
 

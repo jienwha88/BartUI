@@ -7,38 +7,44 @@
 
 <div class="rtd-block">
   <div class="rtd=header">
-    <h2 class="title"> Real Time Departures <span>8:24pm</span></h2>
+    <h2 class="title"> Real Time Departures
+    <!--<span>-->
+      <!--{{whatTime | async | date: 'h:mm'}}-->
+    <!--</span>-->
+    </h2>
 
   </div>
   <div class="rtd-block-content">
     <div>32 trains currently in service.</div>
-    <select name="stations"><option value="12TH">12th St. Oakland City Center</option></select>
+    <select #selectedStation name="stations"><option value="12TH">12th St. Oakland City Center</option>
+      <option value="16TH">16th St. Mission (SF)</option><option value="19TH">19th St. Oakland</option></select>
+    <input type="submit" value="Go" (click)="getEstimatedDepartureTime(selectedStation.value)">
   </div>
-  <input type="submit" value="Go">
-
-  <button (click)="getEstimatedDepartureTime('MONT')">
-    Get Stations
-  </button>
 
 
-  <div class="rtd-live">
+
+  <div class="rtd-live" *ngIf="important">
     <div>
       <h3 class="title">Platform 1</h3>
       <ul id="rtd-platform-list1">
-        <li>
-          <span class="train-line"><a href="/stations/DALY/">DALY</a></span>
-          <span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>
-          <span class="etd-times">2, 26, 46 min</span>
+        <li *ngFor="let etd of (important | platform:1)" >
+          <span > <a >{{etd.abbreviation}}</a></span>
+          <span class="color-box" > </span>
+          <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
+            {{estimate.minutes}} {{isLast ? ' min' : ', '}}
+          </span>
         </li>
       </ul>
     </div>
     <div>
       <h3 class="title">Platform 2</h3>
       <ul id="rtd-platform-list2">
-        <li>
-          <span class="train-line"><a href="/stations/DALY/">DALY</a></span>
-          <span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>
-          <span class="etd-times">2, 26, 46 min</span>
+        <li *ngFor="let etd of (important | platform:2)">
+          <span > <a >{{etd.abbreviation}}</a></span>
+          <span class="color-box" > </span>
+          <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
+            {{estimate.minutes}} {{isLast ? ' min' : ', '}}
+          </span>
         </li>
       </ul>
     </div>

@@ -1,0 +1,91 @@
+{
+  "?xml": {
+    "@encoding": "utf-8",
+    "@version": "1.0"
+  },
+  "root": {
+    "@id": "1",
+    "date": "07/31/2017",
+    "message": "",
+    "station": [
+      {
+        "abbr": "CONC",
+        "etd": [
+          {
+            "abbreviation": "PITT",
+            "destination": "Pittsburg/Bay Point",
+            "estimate": [
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "North",
+                "hexcolor": "#ffff33",
+                "length": "10",
+                "minutes": "2",
+                "platform": "1"
+              },
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "North",
+                "hexcolor": "#ffff33",
+                "length": "10",
+                "minutes": "18",
+                "platform": "1"
+              },
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "North",
+                "hexcolor": "#ffff33",
+                "length": "10",
+                "minutes": "38",
+                "platform": "1"
+              }
+            ],
+            "limited": "0"
+          },
+          {
+            "abbreviation": "MLBR",
+            "destination": "SFO/Millbrae",
+            "estimate": [
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "South",
+                "hexcolor": "#ffff33",
+                "length": "0",
+                "minutes": "11",
+                "platform": "2"
+              },
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "South",
+                "hexcolor": "#ffff33",
+                "length": "10",
+                "minutes": "31",
+                "platform": "2"
+              },
+              {
+                "bikeflag": "1",
+                "color": "YELLOW",
+                "direction": "South",
+                "hexcolor": "#ffff33",
+                "length": "10",
+                "minutes": "51",
+                "platform": "2"
+              }
+            ],
+            "limited": "0"
+          }
+        ],
+        "name": "Concord"
+      }
+    ],
+    "time": "07:37:01 PM PDT",
+    "uri": {
+      "#cdata-section": "http://api.bart.gov/api/etd.aspx?cmd=etd&orig=conc&json=y"
+    }
+  }
+}
