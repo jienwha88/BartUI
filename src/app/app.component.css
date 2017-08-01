@@ -3,8 +3,9 @@
   border-width: 1px;
   color: black;
   background-color: #E3e7e8;
-  width: 400px;
+  width: 350px;
   margin: auto;
+  padding: 10px;
 }
 
 .rtd-header{
@@ -21,9 +22,19 @@
   background-color: YELLOW;
 }
 
+.destination-abbr{
+  padding-right: 10px;
+}
 
 .platform-list {
   list-style-type: none;
 }
 
+.button-holder{
+  text-align: center;
+}
 
+
+.durations-block{
+
+}

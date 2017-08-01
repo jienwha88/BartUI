@@ -30,14 +30,10 @@ export class AppComponent {
 
     console.log(station);
 
-    // return this.http.get(edtUrl).subscribe(
     return this.http.get(edtUrl).subscribe(
-    // return this.http.get('assets/stations.json').subscribe(
       (data) => {
         this.stations = data.json();
         console.log(this.stations);
-        // this.important = this.stations.root.station[0].etd;
-        // console.log(this.important);
 
       }
     );
@@ -53,13 +49,10 @@ export class AppComponent {
     params.set('dest', destination);
     let durationUrl = "http://localhost:8080/api/v1/duration";
 
-
-
-    // return this.http.get(edtUrl).subscribe(
     return this.http.get(durationUrl, {search: params}).subscribe(
       (data) => {
         this.durations = data.json();
-
+        console.log(this.durations);
       }
     );
   }

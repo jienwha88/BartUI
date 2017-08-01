@@ -30,7 +30,7 @@
             <input type="checkbox"/>
           </label>
 
-          <span > <a >{{etd.abbreviation}}</a></span>
+          <span class="destination-abbr"> {{etd.abbreviation}}</span>
           <span class="color-box" > </span>
           <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
             {{estimate.minutes}} {{isLast ? ' min' : ', '}}
@@ -38,7 +38,7 @@
         </li>
       </ul>
 
-      <!--<input type="submit" value="Get Duration" (click)="getDurationToDestination('MONT', 'DALY')">-->
+
     </div>
     <div >
     <h3 class="title">Platform 2</h3>
@@ -47,7 +47,7 @@
         <label>
           <input type="checkbox"/>
         </label>
-        <span > <a >{{etd.abbreviation}}</a></span>
+        <span class="destination-abbr"> {{etd.abbreviation}}</span>
         <span class="color-box" > </span>
         <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
             {{estimate.minutes}} {{isLast ? ' min' : ', '}}
@@ -62,7 +62,7 @@
           <label>
             <input type="checkbox"/>
           </label>
-          <span > <a >{{etd.abbreviation}}</a></span>
+          <span class="destination-abbr"> {{etd.abbreviation}}</span>
           <span class="color-box" > </span>
           <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
             {{estimate.minutes}} {{isLast ? ' min' : ', '}}
@@ -77,7 +77,7 @@
           <label>
             <input type="checkbox"/>
           </label>
-          <span > <a >{{etd.abbreviation}}</a></span>
+          <span class="destination-abbr"> {{etd.abbreviation}}</span>
           <span class="color-box" > </span>
           <span *ngFor="let estimate of etd.estimate.splice(0, 3); let isLast=last">
             {{estimate.minutes}} {{isLast ? ' min' : ', '}}
@@ -85,5 +85,19 @@
         </li>
       </ul>
     </div>
+
+    <div class="button-holder">
+      <input type="submit" value="Get Duration" (click)="getDurationToDestination('MONT', 'DALY')">
+    </div>
   </div>
 </div>
+
+<div class="rtd-block" *ngIf="durations">
+  <div>Destination: {{durations.origin}}</div>
+      <span class="destination-abbr"> {{durations.destination}}</span>
+      <span class="color-box" > </span>
+      <span > {{durations.tripTime}} (ETA {{durations.eta}} PST) min</span>
+</div>
+
+<!--DALY (color code) : 12 (ETA 12:05pm PST), 26 (ETA 12:31pm PST), 41 (ETA 12:56pm) min -->
+
