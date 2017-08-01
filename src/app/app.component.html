@@ -8,9 +8,10 @@
 <div class="rtd-block">
   <div class="rtd=header">
     <h2 class="title"> Real Time Departures
-    <!--<span>-->
-      <!--{{whatTime | async | date: 'h:mm'}}-->
-    <!--</span>-->
+    <span *ngIf="currentDate">
+      <!--{{currentDate |amDateFormat: 'h:mm'}}-->
+      {{currentDate | date:'shortTime'}}
+    </span>
     </h2>
 
   </div>

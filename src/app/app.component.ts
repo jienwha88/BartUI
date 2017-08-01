@@ -12,13 +12,19 @@ export class AppComponent {
   public http: Http;
   stations: any;
   important: any[];
+  // currentDate: Date;
+
+  currentDate: number = Date.now();
+
 
   constructor(http: Http){
     this.http = http;
 
     this.getEstimatedDepartureTime('12TH');
+    // this.utcTime();
 
   }
+
 
   getEstimatedDepartureTime(station: string){
     let edtUrl = "http://localhost:8080/api/v1/etd/" + station;
@@ -43,6 +49,11 @@ export class AppComponent {
     );
   }
 
-
+  // utcTime():void {
+  //   setInterval(() => {
+  //     this.currentDate = new Date();
+  //     console.log(this.currentDate);
+  //   }, 1000);
+  // }
 
 }
