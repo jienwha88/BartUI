@@ -1,91 +1,276 @@
-{
-  "?xml": {
-    "@encoding": "utf-8",
-    "@version": "1.0"
-  },
-  "root": {
-    "@id": "1",
-    "date": "07/31/2017",
-    "message": "",
-    "station": [
-      {
-        "abbr": "CONC",
-        "etd": [
-          {
-            "abbreviation": "PITT",
-            "destination": "Pittsburg/Bay Point",
-            "estimate": [
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "North",
-                "hexcolor": "#ffff33",
-                "length": "10",
-                "minutes": "2",
-                "platform": "1"
-              },
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "North",
-                "hexcolor": "#ffff33",
-                "length": "10",
-                "minutes": "18",
-                "platform": "1"
-              },
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "North",
-                "hexcolor": "#ffff33",
-                "length": "10",
-                "minutes": "38",
-                "platform": "1"
-              }
-            ],
-            "limited": "0"
-          },
-          {
-            "abbreviation": "MLBR",
-            "destination": "SFO/Millbrae",
-            "estimate": [
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "South",
-                "hexcolor": "#ffff33",
-                "length": "0",
-                "minutes": "11",
-                "platform": "2"
-              },
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "South",
-                "hexcolor": "#ffff33",
-                "length": "10",
-                "minutes": "31",
-                "platform": "2"
-              },
-              {
-                "bikeflag": "1",
-                "color": "YELLOW",
-                "direction": "South",
-                "hexcolor": "#ffff33",
-                "length": "10",
-                "minutes": "51",
-                "platform": "2"
-              }
-            ],
-            "limited": "0"
-          }
-        ],
-        "name": "Concord"
-      }
-    ],
-    "time": "07:37:01 PM PDT",
-    "uri": {
-      "#cdata-section": "http://api.bart.gov/api/etd.aspx?cmd=etd&orig=conc&json=y"
+
+  [
+    {
+      "destination": "Daly City",
+      "abbreviation": "DALY",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "3",
+          "platform": "1",
+          "direction": "South",
+          "length": "9",
+          "color": "BLUE",
+          "hexcolor": "#0099cc",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "10",
+          "platform": "1",
+          "direction": "South",
+          "length": "10",
+          "color": "GREEN",
+          "hexcolor": "#339933",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "17",
+          "platform": "1",
+          "direction": "South",
+          "length": "9",
+          "color": "BLUE",
+          "hexcolor": "#0099cc",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Dublin/Pleasanton",
+      "abbreviation": "DUBL",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "11",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "BLUE",
+          "hexcolor": "#0099cc",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "26",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "BLUE",
+          "hexcolor": "#0099cc",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "41",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "BLUE",
+          "hexcolor": "#0099cc",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Millbrae",
+      "abbreviation": "MLBR",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "6",
+          "platform": "1",
+          "direction": "South",
+          "length": "8",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "21",
+          "platform": "1",
+          "direction": "South",
+          "length": "9",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "36",
+          "platform": "1",
+          "direction": "South",
+          "length": "10",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Pittsburg/Bay Point",
+      "abbreviation": "PITT",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "12",
+          "platform": "2",
+          "direction": "North",
+          "length": "5",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "27",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "42",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Pleasant Hill - Limited",
+      "abbreviation": "PHIL",
+      "limited": "1",
+      "estimate": [
+        {
+          "minutes": "9",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "24",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "39",
+          "platform": "2",
+          "direction": "North",
+          "length": "9",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Richmond",
+      "abbreviation": "RICH",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "5",
+          "platform": "2",
+          "direction": "North",
+          "length": "4",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "19",
+          "platform": "2",
+          "direction": "North",
+          "length": "5",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "34",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "RED",
+          "hexcolor": "#ff0000",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "SF Airport",
+      "abbreviation": "SFIA",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "13",
+          "platform": "1",
+          "direction": "South",
+          "length": "10",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "28",
+          "platform": "1",
+          "direction": "South",
+          "length": "10",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "43",
+          "platform": "1",
+          "direction": "South",
+          "length": "10",
+          "color": "YELLOW",
+          "hexcolor": "#ffff33",
+          "bikeflag": "1"
+        }
+      ]
+    },
+    {
+      "destination": "Warm Springs",
+      "abbreviation": "WARM",
+      "limited": "0",
+      "estimate": [
+        {
+          "minutes": "15",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "GREEN",
+          "hexcolor": "#339933",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "29",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "GREEN",
+          "hexcolor": "#339933",
+          "bikeflag": "1"
+        },
+        {
+          "minutes": "44",
+          "platform": "2",
+          "direction": "North",
+          "length": "10",
+          "color": "GREEN",
+          "hexcolor": "#339933",
+          "bikeflag": "1"
+        }
+      ]
     }
-  }
-}
+  ]
+

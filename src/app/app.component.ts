@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, URLSearchParams} from "@angular/http";
 
 @Component({
   selector: 'app-root',
@@ -10,18 +10,17 @@ export class AppComponent {
   title = 'app';
 
   public http: Http;
-  stations: any;
-  important: any[];
-  // currentDate: Date;
+  stations: any [];
 
   currentDate: number = Date.now();
+  durations: any[];
+
 
 
   constructor(http: Http){
     this.http = http;
-
     this.getEstimatedDepartureTime('12TH');
-    // this.utcTime();
+
 
   }
 
@@ -29,31 +28,40 @@ export class AppComponent {
   getEstimatedDepartureTime(station: string){
     let edtUrl = "http://localhost:8080/api/v1/etd/" + station;
 
-    // this.http.get(edtUrl)
-    //   .map(res => res.json())
-    //   .subscribe(stations => this.stations = stations);
-    //
-    // console.log(this.stations);
-
     console.log(station);
 
     // return this.http.get(edtUrl).subscribe(
-    return this.http.get('assets/stations.json').subscribe(
+    return this.http.get(edtUrl).subscribe(
+    // return this.http.get('assets/stations.json').subscribe(
       (data) => {
         this.stations = data.json();
         console.log(this.stations);
-        this.important = this.stations.root.station[0].etd;
-        console.log(this.important);
+        // this.important = this.stations.root.station[0].etd;
+        // console.log(this.important);
 
       }
     );
   }
 
-  // utcTime():void {
-  //   setInterval(() => {
-  //     this.currentDate = new Date();
-  //     console.log(this.currentDate);
-  //   }, 1000);
-  // }
+
+  getDurationToDestination(origin: string, destination: string){
+    console.log(origin);
+    console.log(destination);
+
+    let params = new URLSearchParams();
+    params.set('orig', origin);
+    params.set('dest', destination);
+    let durationUrl = "http://localhost:8080/api/v1/duration";
+
+
+
+    // return this.http.get(edtUrl).subscribe(
+    return this.http.get(durationUrl, {search: params}).subscribe(
+      (data) => {
+        this.durations = data.json();
+
+      }
+    );
+  }
 
 }

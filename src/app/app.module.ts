@@ -9,7 +9,6 @@ import {FilterPipe} from "./pipe/FilterPipe";
   declarations: [
     AppComponent,
     FilterPipe
-
   ],
   imports: [
     BrowserModule,
