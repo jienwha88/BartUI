@@ -1,20 +1,108 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!
+    Welcome to William Wu's Bart UI
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="rtd-block">
+  <div class="rtd=header">
+    <h2 class="title"> Real Time Departures <span>8:24pm</span></h2>
+
+  </div>
+  <div class="rtd-block-content">
+    <div>32 trains currently in service.</div>
+    <select name="stations"><option value="12TH">12th St. Oakland City Center</option></select>
+  </div>
+  <input type="submit" value="Go">
+
+  <button (click)="getEstimatedDepartureTime('MONT')">
+    Get Stations
+  </button>
+
+
+  <div class="rtd-live">
+    <div>
+      <h3 class="title">Platform 1</h3>
+      <ul id="rtd-platform-list1">
+        <li>
+          <span class="train-line"><a href="/stations/DALY/">DALY</a></span>
+          <span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>
+          <span class="etd-times">2, 26, 46 min</span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="title">Platform 2</h3>
+      <ul id="rtd-platform-list2">
+        <li>
+          <span class="train-line"><a href="/stations/DALY/">DALY</a></span>
+          <span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>
+          <span class="etd-times">2, 26, 46 min</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="wrapper">-->
+  <!--<div class="rtd-block">-->
+    <!--<div class="rtd-header">-->
+      <!--<h2 class="title">Real Time Departures <span id="real-time-time-front">8:24pm</span> </h2>-->
+    <!--</div>-->
+    <!--<div class="rtd-live not-expanded by-platform ajax-refresh-processed">-->
+      <!--<div class="rtd-block-content"><div id="rtd-estimate-form-wrapper"><div></div><div class="rtd-train-count">32 trains currently in service.</div><form action="/" method="post" id="bart-schedule-forms-ajax-rtd-form" accept-charset="UTF-8"><div class="form-item form-type-select form-item-stations">-->
+        <!--<label class="element-invisible" for="edit-stations&#45;&#45;3">Select station to get upcoming departures: </label>-->
+        <!--<select id="edit-stations&#45;&#45;3" name="stations" class="form-select"><option value="12TH">12th St. Oakland City Center</option><option value="16TH">16th St. Mission (SF)</option><option value="19TH">19th St. Oakland</option><option value="24TH">24th St. Mission (SF)</option><option value="ASHB">Ashby (Berkeley)</option><option value="BALB">Balboa Park (SF)</option><option value="BAYF">Bay Fair (San Leandro)</option><option value="CAST">Castro Valley</option><option value="CIVC">Civic Center / UN Plaza</option><option value="COLS">Coliseum</option><option value="COLM">Colma</option><option value="CONC">Concord</option><option value="DALY">Daly City</option><option value="DBRK">Downtown Berkeley</option><option value="DUBL">Dublin / Pleasanton</option><option value="DELN">El Cerrito del Norte</option><option value="PLZA">El Cerrito Plaza</option><option value="EMBR">Embarcadero (SF)</option><option value="FRMT">Fremont</option><option value="FTVL">Fruitvale (Oakland)</option><option value="GLEN">Glen Park (SF)</option><option value="HAYW">Hayward</option><option value="LAFY">Lafayette</option><option value="LAKE">Lake Merritt (Oakland)</option><option value="MCAR">MacArthur (Oakland)</option><option value="MLBR">Millbrae</option><option value="MONT" selected="selected">Montgomery St. (SF)</option><option value="NBRK">North Berkeley</option><option value="NCON">North Concord / Martinez</option><option value="OAKL">Oakland Int'l Airport</option><option value="ORIN">Orinda</option><option value="PITT">Pittsburg / Bay Point</option><option value="PHIL">Pleasant Hill / Contra Costa Centre</option><option value="POWL">Powell St. (SF)</option><option value="RICH">Richmond</option><option value="ROCK">Rockridge (Oakland)</option><option value="SBRN">San Bruno</option><option value="SFIA">San Francisco Int'l Airport</option><option value="SANL">San Leandro</option><option value="SHAY">South Hayward</option><option value="SSAN">South San Francisco</option><option value="UCTY">Union City</option><option value="WCRK">Walnut Creek</option><option value="WARM">Warm Springs / South Fremont</option><option value="WDUB">West Dublin / Pleasanton</option><option value="WOAK">West Oakland</option></select>-->
+      <!--</div>-->
+        <!--<input type="submit" id="rtd-submit" name="op" value="Go" class="form-submit ajax-processed"><div class="rtd">-->
+          <!--<div id="station-code" class="MONT"></div>-->
+          <!--<div class="rtd-live">-->
+            <!--<div class="rtd-content jquery-once-1-processed"><div class="rtd-platform">-->
+              <!--<h3 class="title">Platform 1</h3>-->
+              <!--<ul id="rtd-platform-list">-->
+                <!--<li>-->
+                  <!--<span class="train-line"><a href="/stations/DALY/">DALY</a></span>-->
+                  <!--<span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>-->
+                  <!--<span class="etd-times">2, 26, 46 min</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                  <!--<span class="train-line"><a href="/stations/MLBR/">MLBR</a></span>-->
+                  <!--<span class="route-spacer route-YELLOW" alt="YELLOW line" title="YELLOW line"></span>-->
+                  <!--<span class="etd-times">11, 30, 51 min</span>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
+              <!--<div class="rtd-platform">-->
+              <!--<h3 class="title">Platform 2</h3>-->
+              <!--<ul id="rtd-platform-list">-->
+                <!--<li>-->
+                  <!--<span class="train-line"><a href="/stations/DUBL/">DUBL</a></span>-->
+                  <!--<span class="route-spacer route-BLUE" alt="BLUE line" title="BLUE line"></span>-->
+                  <!--<span class="etd-times">4, 23, 43 min</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                  <!--<span class="train-line"><a href="/stations/PITT/">PITT</a></span>-->
+                  <!--<span class="route-spacer route-YELLOW" alt="YELLOW line" title="YELLOW line"></span>-->
+                  <!--<span class="etd-times">16, 36, 56 min</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                  <!--<span class="train-line"><a href="/stations/RICH/">RICH</a></span>-->
+                  <!--<span class="route-spacer route-RED" alt="RED line" title="RED line"></span>-->
+                  <!--<span class="etd-times">10, 29, 49 min</span>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<input type="hidden" name="form_build_id" value="form-pqwdwyblW19T_Bk7G_mDZNeIZ4oDGtj-56dXYG_kMCw">-->
+        <!--<input type="hidden" name="form_id" value="bart_schedule__forms_ajax_rtd_form">-->
+      <!--</form></div></div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
